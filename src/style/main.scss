@@ -1,0 +1,12 @@
+//variables
+@use "./variables/variables.scss";
+
+// base
+@use "./base/reset.scss";
+@use "./base/global.scss";
+
+// components
+@use "./components/common/navbar.scss";
+
+// pages
+@use "./pages/home.scss";

@@ -1,0 +1,10 @@
+
+@use 'variables' as vars;
+
+// Base Typography Styles
+body {
+  font-family: vars.$font-primary; // Access variables using the namespace
+  font-size: 32px; // Base font size
+  line-height: 1.5; // Default line height for readability
+  color: vars.$text-color; // Access text color variable
+}

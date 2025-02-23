@@ -1,0 +1,9 @@
+/* src/styles/variables/fonts.css */
+
+@font-face {
+  font-family: "DMSerifText-Regular";
+  src: url("../../assets/fonts/DMSerifText-Italic.ttf") format("ttf"),
+    url("../../assets/fonts/DMSerifText-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}

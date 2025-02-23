@@ -1,0 +1,8 @@
+@use "../variables/variables" as var;
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  background-color: var.$primary-bg-color; // Correctly using the namespace 'var'
+  color: var.$text-color-primary;
+}

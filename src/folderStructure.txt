@@ -1,0 +1,84 @@
+src/
+│
+├── assets/               # Static assets like images, icons, fonts, etc.
+│   ├── images/           # Images used in the project
+│   ├── icons/            # SVG or icon files
+│   └── fonts/            # Custom fonts (if any)
+│
+├── components/           # Reusable UI components
+│   ├── common/           # Common components used across the app
+│   │   ├── Button/
+│   │   │   ├── Button.tsx
+│   │   │   ├── Button.module.css
+│   │   │   └── Button.types.ts
+│   │   ├── Input/
+│   │   ├── Modal/
+│   │   └── Navbar/
+│   ├── layout/           # Layout components (e.g., Header, Footer, Sidebar)
+│   │   ├── Header/
+│   │   ├── Footer/
+│   │   └── Sidebar/
+│   ├── pages/            # Page-specific components
+│   │   ├── Home/
+│   │   ├── About/
+│   │   ├── Services/
+│   │   ├── Portfolio/
+│   │   └── Contact/
+│   └── utils/            # Utility components (e.g., loaders, error boundaries)
+│
+├── context/              # Context API for state management
+│   ├── AuthContext.ts    # Authentication context
+│   └── ThemeContext.ts   # Theme context (light/dark mode)
+│
+├── hooks/                # Custom React hooks
+│   ├── useFetch.ts       # Custom hook for API calls
+│   └── useLocalStorage.ts # Custom hook for local storage
+│
+├── pages/                # Page-level components (routes)
+│   ├── HomePage.tsx
+│   ├── AboutPage.tsx
+│   ├── ServicesPage.tsx
+│   ├── PortfolioPage.tsx
+│   └── ContactPage.tsx
+│
+├── routes/               # Routing configuration
+│   ├── index.ts          # Main routing file
+│   └── PrivateRoute.ts   # Protected routes (if needed)
+│
+├── services/             # API services and utilities
+│   ├── api.ts            # Axios instance or fetch wrapper
+│   └── endpoints.ts      # API endpoint definitions
+│
+├── styles/               # Global and component-specific styles
+│   ├── base/             # Base styles (reset, typography, etc.)
+│   │   ├── reset.css     # CSS reset
+│   │   ├── typography.css # Typography styles
+│   │   └── global.css    # Global styles
+│   ├── components/       # Component-specific styles
+│   │   ├── Button.module.css
+│   │   ├── Navbar.module.css
+│   │   └── Footer.module.css
+│   ├── themes/           # Theme-related styles (light/dark mode)
+│   │   ├── lightTheme.css
+│   │   └── darkTheme.css
+│   ├── variables/        # CSS variables and constants
+│   │   ├── colors.css    # Color palette
+│   │   ├── spacing.css   # Spacing constants
+│   │   └── typography.css # Font sizes, weights, etc.
+│   └── mixins/           # Reusable CSS mixins
+│       ├── flexbox.css   # Flexbox utilities
+│       └── grid.css      # Grid utilities
+│
+├── types/                # TypeScript types and interfaces
+│   ├── api.types.ts      # API response types
+│   ├── auth.types.ts     # Authentication-related types
+│   └── global.types.ts   # Global types (e.g., theme, user)
+│
+├── utils/                # Utility functions and helpers
+│   ├── constants.ts      # Constants (e.g., API URLs, keys)
+│   ├── helpers.ts        # Helper functions
+│   └── validators.ts     # Validation logic
+│
+├── App.tsx               # Main application component
+├── index.tsx             # Entry point of the application
+└── setupTests.ts         # Test setup file (for Jest or other testing frameworks)

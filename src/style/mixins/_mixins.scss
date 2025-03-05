@@ -9,3 +9,39 @@
   justify-content: space-between;
   align-items: center;
 }
+@mixin flex-arround {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin fadeInTopToBottom($duration: 1.5s, $distance: 50px) {
+  animation: fadeInTopToBottom $duration ease-out;
+
+  @keyframes fadeInTopToBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(-$distance); /* Start off-screen, above */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* End at the normal position */
+    }
+  }
+}
+
+@mixin fadeInLeftToRight($duration: 1.5s, $distance: 50px) {
+  animation: fadeInLeftToRight $duration ease-out;
+
+  @keyframes fadeInLeftToRight { // Corrected the name here
+    0% {
+      width: 0;
+      opacity: 0;
+      transform: translateX(-$distance); /* Start off-screen, to the left */
+    }
+    100% {
+      width: 100%;
+      opacity: 1;
+      transform: translateX(0); /* End at the normal position */
+    }
+  }
+}

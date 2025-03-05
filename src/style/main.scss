@@ -7,6 +7,8 @@
 
 // components
 @use "./components/common/navbar.scss";
+@use "./components/3D/canvas.scss";
 
 // pages
 @use "./pages/home.scss";
+@use "./pages/about.scss";

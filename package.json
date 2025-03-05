@@ -10,9 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^10.0.3",
+    "@react-three/fiber": "^9.0.4",
+    "@types/three": "^0.174.0",
+    "framer-motion": "^12.4.10",
+    "lil-gui": "^0.20.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.85.0"
+    "sass": "^1.85.0",
+    "three": "^0.174.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

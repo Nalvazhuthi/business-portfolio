@@ -1,0 +1,74 @@
+@use "../variables/variables.scss" as var;
+@use "../mixins//mixins" as mixins;
+
+.about {
+  height: 100vh;
+  @include mixins.flex-center;
+  position: relative;
+  z-index: 100;
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .top-header {
+      border-radius: 0 50px 50px 0;
+      width: 35%;
+      background-color: var.$secondary-bg-color;
+      font-size: var.$font-size-xl;
+      padding: 20px 20px;
+      padding-right: 30px;
+      box-shadow: 20px 2px 50px -21px rgba(0, 0, 0, 0.75);
+
+      @include mixins.flex-center;
+      justify-content: end;
+
+      @media (max-width: var.$breakpoint-mobile) {
+        font-size: 6vw;
+        width: 60%;
+        align-items: flex-start;
+      }
+      @media (max-width: var.$breakpoint-tablet) {
+        font-size: 6vw;
+        width: 60%;
+        align-items: flex-start;
+      }
+    }
+
+    .row {
+      width: 50%;
+      color: var.$text-color-secondary;
+      @media (max-width: var.$breakpoint-mobile) {
+        width: 100%;
+      }
+    }
+    @media (max-width: var.$breakpoint-mobile) {
+      gap: 10px;
+    }
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 100px;
+    @media (max-width: var.$breakpoint-mobile) {
+      padding-left: 20px;
+    }
+    .col {
+      @include mixins.flex-arround;
+      align-items: start;
+      .skills-box {
+        .skills-list {
+          @include mixins.flex-sb;
+          align-items: start;
+          flex-direction: column;
+          gap: 10px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  @media (max-width: var.$breakpoint-mobile) {
+    padding-top: 50px;
+    align-items: flex-start;
+  }
+}

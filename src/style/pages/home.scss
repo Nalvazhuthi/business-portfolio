@@ -2,11 +2,14 @@
 @use "../mixins//mixins" as mixins;
 .home {
   width: 100%;
-  height: calc(100% - 60px);
+  height: calc(100vh - 60px);
   @include mixins.flex-center;
   align-items: flex-end;
   color: var.$text-color-secondary;
   padding-bottom: 16px;
+  position: relative;
+  z-index: 100;
+
   .homeContent {
     @include mixins.flex-sb;
     flex-direction: column;
@@ -14,6 +17,8 @@
 
     h2 {
       font-size: 6vw;
+      position: relative;
+      @include mixins.fadeInTopToBottom(1s, 50px);
 
       @media (max-width: var.$breakpoint-mobile) {
         font-size: 6vw;
@@ -22,19 +27,23 @@
 
     h1 {
       font-size: 10vw;
+      @include mixins.fadeInTopToBottom(1s, 50px);
 
       @media (max-width: var.$breakpoint-mobile) {
         font-size: 10vw;
       }
     }
+
     .businessDetails {
       width: 70vw;
       text-align: center;
-      // overflow: hidden;
-      // text-overflow: ellipsis;
-      // white-space: nowrap;
     }
+
     .socialLinks {
+      @include mixins.fadeInLeftToRight(
+        1s,
+        50px
+      ); // Correctly applies the left-to-right animation
       @include mixins.flex-sb;
       gap: 12px;
     }

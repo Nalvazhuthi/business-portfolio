@@ -1,11 +1,9 @@
-import Navbar from "./components/common/navbar";
-import Home from "./pages/home";
+import Experience from "./components/3D/experience";
 import "./style/main.scss";
 const App = () => {
   return (
     <div className="main-container">
-      <Navbar />
-      <Home/>
+      <Experience />
     </div>
   );
 };

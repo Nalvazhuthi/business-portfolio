@@ -45,3 +45,32 @@
     }
   }
 }
+
+
+// mixins.scss
+
+@mixin parallax($strength) {
+  transform-style: preserve-3d;
+  will-change: transform;
+  
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.1s ease-out;
+  }
+  
+  // For scroll-triggered parallax
+  [data-scroll] & {
+    transform: translateY(calc(var(--scroll) * #{$strength}));
+  }
+}
+
+@mixin tilt-effect($max-tilt) {
+  @media (hover: hover) {
+    &:hover {
+      transform: perspective(1000px) 
+        rotateX(calc(var(--tiltY) * 0.3deg)) 
+        rotateY(calc(var(--tiltX) * 0.3deg)) 
+        translateZ(20px);
+      transition: transform 0.3s ease-out;
+    }
+  }
+}

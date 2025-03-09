@@ -1,0 +1,136 @@
+/* Add to your CSS file */
+@use "../variables/variables" as var;
+@use "../mixins/mixins" as mixins;
+
+.services {
+  color: var.$text-color-primary;
+  text-align: center;
+  padding-top: 10vh;
+
+  @media (max-width: var.$breakpoint-tablet) {
+    padding-top: 7vh;
+  }
+
+  @media (max-width: var.$breakpoint-mobile) {
+    padding-top: 5vh;
+  }
+}
+
+.section-title {
+  border-radius: 50px 0px 0px 50px;
+  font-size: var.$font-size-xl;
+  margin-bottom: 2rem;
+  color: var.$text-color-primary;
+  background-color: rgba(var.$secondary-bg-color, 0.8);
+  backdrop-filter: blur(10px); // Backdrop filter
+  -webkit-backdrop-filter: blur(10px); // Safari support
+  width: 35%;
+  margin-left: auto;
+  padding: 20px 20px;
+  box-shadow: 20px 2px 50px -21px rgba(0, 0, 0, 0.75);
+
+  @media (max-width: var.$breakpoint-tablet) {
+    font-size: 6vw;
+    // width: 50%;
+    align-items: flex-start;
+    // padding: 10px;
+    font-size: 26px;
+  }
+  @media (max-width: var.$breakpoint-mobile) {
+    font-size: 6vw;
+    width: 60%;
+    align-items: flex-start;
+  }
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-height: 80%;
+  overflow: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.service-card {
+  background-color: rgba(
+    var.$secondary-bg-color,
+    0.8
+  ); // Semi-transparent background
+  backdrop-filter: blur(10px); // Backdrop filter
+  -webkit-backdrop-filter: blur(10px); // Safari support
+  border-radius: 10px;
+  padding: 2.5rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  transform: translateY(0);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.icon-container {
+  background: #3498db;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: transform 0.3s;
+}
+
+.service-icon {
+  font-size: 2.2rem;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.service-card:hover .icon-container {
+  transform: scale(1.1);
+}
+
+.service-card h3 {
+  color: #2c3e50;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+  transition: color 0.3s;
+}
+
+.service-card p {
+  color: #7f8c8d;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Gradient overlay effect */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(52, 152, 219, 0.3) 10%,
+    transparent 10%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}

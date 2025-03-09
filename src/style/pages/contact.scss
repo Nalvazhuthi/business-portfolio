@@ -1,0 +1,111 @@
+@use "../variables/variables.scss" as var;
+@use "../mixins/mixins" as mixins;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15vh;
+  gap: 50px;
+  @media (max-width: var.$breakpoint-tablet) {
+    padding-top: 10vh;
+  }
+
+  @media (max-width: var.$breakpoint-mobile) {
+    padding-top: 5vh;
+  }
+
+  &__title {
+    border-radius: 0 50px 50px 0;
+    width: 35%;
+    background-color: rgba(var.$secondary-bg-color, 0.8); // Semi-transparent background
+    backdrop-filter: blur(10px); // Backdrop filter
+    -webkit-backdrop-filter: blur(10px); // Safari support
+    padding: 20px 20px;
+    padding-right: 30px;
+    box-shadow: 20px 2px 50px -21px rgba(0, 0, 0, 0.75);
+    transform: translateZ(0); // Force hardware acceleration
+
+    @media (max-width: var.$breakpoint-tablet) {
+        font-size: 6vw;
+        width: 50%;
+        align-items: flex-start;
+        // padding: 10px;
+        font-size: 26px;
+      }
+
+      @media (max-width: var.$breakpoint-mobile) {
+        font-size: 6vw;
+        width: 60%;
+        align-items: flex-start;
+      }
+  }
+
+  &__form {
+    max-width: 600px;
+    margin-left: 5vw;
+    background-color: rgba(
+      var.$secondary-bg-color,
+      0.8
+    ); // Use rgba for opacity
+    backdrop-filter: blur(10px); // Add backdrop filter for frosted glass effect
+    -webkit-backdrop-filter: blur(10px); // For Safari support
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: var.$breakpoint-mobile) {
+        margin: 0 0;
+      }
+
+    &-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+
+      label {
+        display: block;
+        color: var.$text-color-primary;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        // background-color: rgba(
+        //   lighten(var.$secondary-bg-color, 10%),
+        //   0.8
+        // ); // Add opacity to inputs
+        color: var.$text-color-primary;
+
+        &::placeholder {
+          color: var.$text-color-secondary;
+          color: inherit;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 150px;
+      }
+    }
+
+    &-button {
+      background-color: var.$text-color-secondary;
+      color: var.$text-color-primary;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      // &:hover {
+      //   background-color: darken(var.$text-color-secondary, 10%);
+      // }
+    }
+  }
+}

@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Logo } from "../../assets/icons/svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("home"); // Track active section
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const handleNavClick = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+    setActiveSection(id); // Update active section
+    setIsOpen(false);
   };
 
   return (
@@ -14,13 +23,17 @@ const Navbar = () => {
         <Logo />
       </div>
       <div className={`nav-options ${isOpen ? "open" : ""}`}>
-        <div className="options">Home</div>
-        <div className="options">About</div>
-        <div className="options">Resume</div>
-        <div className="options">Services</div>
-        <div className="options">Contact</div>
+        {["home", "about", "services", "works", "contact"].map((item) => (
+          <div
+            key={item}
+            className={`options ${activeSection === item ? "active" : ""}`}
+            onClick={() => handleNavClick(item)}
+          >
+            {item.charAt(0).toUpperCase() + item.slice(1)}
+          </div>
+        ))}
       </div>
-      <div className={`hamburger ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
+      <div className={`hamburger ${isOpen ? "open" : ""}`} onClick={() => setIsOpen(!isOpen)}>
         <div className="line"></div>
         <div className="line"></div>
         <div className="line"></div>
@@ -30,3 +43,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

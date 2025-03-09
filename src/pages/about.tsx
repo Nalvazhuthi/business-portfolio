@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="about">
+    <div className="about section">
       {/* First part: Just the title */}
       <section className="section" id="about">
         <div className="top-header">

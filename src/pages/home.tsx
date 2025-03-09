@@ -21,7 +21,7 @@ const Home = () => {
     },
   ];
   return (
-    <div className="home">
+    <div className="home section" id="home">
       <div className="homeContent">
         <h2>
           I am Nalvazhuthi<span></span>

@@ -3,9 +3,32 @@
 .main-container {
   // position: relative;
   // z-index: 10;
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
+  // overflow-y: auto;
+  overflow-x: hidden;
+  // scroll-snap-type: y mandatory;
   background-color: var.$primary-bg-color; // Correctly using the namespace 'var'
   color: var.$text-color-primary;
-  pointer-events: none;
+  // pointer-events: none;
+  background: url("../../assets/image/background.jpg");
+}
+
+.bgImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(500vh - 300px);
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.section {
+  width: 100%;
+  height: calc(100vh - 60px);
+  position: relative;
+  z-index: 100;
 }

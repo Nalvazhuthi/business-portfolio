@@ -2,32 +2,59 @@
 @use "../mixins//mixins" as mixins;
 
 .about {
-  height: 100vh;
   @include mixins.flex-center;
-  position: relative;
-  z-index: 100;
   .section {
+    padding-top: 15vh;
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    @media (max-width: var.$breakpoint-tablet) {
+      padding-top: 10vh;
+    }
+
+    @media (max-width: var.$breakpoint-mobile) {
+      padding-top: 5vh;
+    }
+
     .top-header {
       border-radius: 0 50px 50px 0;
       width: 35%;
-      background-color: var.$secondary-bg-color;
-      font-size: var.$font-size-xl;
+      background-color: rgba(
+        var.$secondary-bg-color,
+        0.8
+      ); // Semi-transparent background
+      backdrop-filter: blur(10px); // Backdrop filter
+      -webkit-backdrop-filter: blur(10px); // Safari support
       padding: 20px 20px;
       padding-right: 30px;
-      box-shadow: 20px 2px 50px -21px rgba(0, 0, 0, 0.75);
-
+      // box-shadow: 20px 2px 50px -21px rgba(0, 0, 0, 0.75);
       @include mixins.flex-center;
-      justify-content: end;
-
+      @media (max-width: var.$breakpoint-tablet) {
+        font-size: 6vw;
+        // width: 50%;
+        align-items: flex-start;
+        // padding: 10px;
+        font-size: 26px;
+      }
       @media (max-width: var.$breakpoint-mobile) {
         font-size: 6vw;
         width: 60%;
         align-items: flex-start;
       }
+      h1 {
+        font-size: var.$font-size-xl;
+      }
+
       @media (max-width: var.$breakpoint-tablet) {
+        font-size: 6vw;
+        width: 50%;
+        align-items: flex-start;
+        // padding: 10px;
+        font-size: 26px;
+      }
+
+      @media (max-width: var.$breakpoint-mobile) {
         font-size: 6vw;
         width: 60%;
         align-items: flex-start;
@@ -53,10 +80,16 @@
     @media (max-width: var.$breakpoint-mobile) {
       padding-left: 20px;
     }
+    @media (max-width: var.$breakpoint-tablet) {
+      padding-left: 50px;
+    }
     .col {
       @include mixins.flex-arround;
       align-items: start;
       .skills-box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         .skills-list {
           @include mixins.flex-sb;
           align-items: start;

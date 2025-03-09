@@ -4,8 +4,10 @@
 .contact {
   display: flex;
   flex-direction: column;
-  padding-top: 15vh;
   gap: 50px;
+  @include mixins.flex-center;
+  align-items: flex-end;
+
   @media (max-width: var.$breakpoint-tablet) {
     padding-top: 10vh;
   }
@@ -15,47 +17,47 @@
   }
 
   &__title {
-    border-radius: 0 50px 50px 0;
+    @include mixins.semiTransparentBackground(var.$secondary-bg-color);
+    border-radius: 50px 0px 0px 50px;
     width: 35%;
-    background-color: rgba(var.$secondary-bg-color, 0.8); // Semi-transparent background
-    backdrop-filter: blur(10px); // Backdrop filter
-    -webkit-backdrop-filter: blur(10px); // Safari support
-    padding: 20px 20px;
+    padding: 20px;
     padding-right: 30px;
     box-shadow: 20px 2px 50px -21px rgba(0, 0, 0, 0.75);
     transform: translateZ(0); // Force hardware acceleration
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
     @media (max-width: var.$breakpoint-tablet) {
-        font-size: 6vw;
-        width: 50%;
-        align-items: flex-start;
-        // padding: 10px;
-        font-size: 26px;
-      }
+      font-size: 6vw;
+      width: 50%;
+      align-items: flex-start;
+      font-size: 26px;
+    }
 
-      @media (max-width: var.$breakpoint-mobile) {
-        font-size: 6vw;
-        width: 60%;
-        align-items: flex-start;
-      }
+    @media (max-width: var.$breakpoint-mobile) {
+      font-size: 6vw;
+      width: 60%;
+      align-items: center; // Center align on mobile
+    }
   }
 
   &__form {
-    max-width: 600px;
+    @include mixins.semiTransparentBackground(var.$secondary-bg-color);
+    min-width: 600px;
     margin-left: 5vw;
-    background-color: rgba(
-      var.$secondary-bg-color,
-      0.8
-    ); // Use rgba for opacity
-    backdrop-filter: blur(10px); // Add backdrop filter for frosted glass effect
-    -webkit-backdrop-filter: blur(10px); // For Safari support
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
+    @media (max-width: var.$breakpoint-tablet) {
+      min-width: 100%; // Make form width 100% on tablet
+      margin-left: 0; // Remove margin on tablet
+    }
+
     @media (max-width: var.$breakpoint-mobile) {
-        margin: 0 0;
-      }
+      min-width: 100%; // Full width on mobile
+      margin: 0 0; // Remove margins on mobile
+      padding: 1.5rem; // Slightly reduce padding on mobile for space efficiency
+    }
 
     &-group {
       margin-bottom: 1.5rem;
@@ -75,15 +77,15 @@
         border: none;
         border-radius: 5px;
         font-size: 1rem;
-        // background-color: rgba(
-        //   lighten(var.$secondary-bg-color, 10%),
-        //   0.8
-        // ); // Add opacity to inputs
         color: var.$text-color-primary;
 
         &::placeholder {
           color: var.$text-color-secondary;
           color: inherit;
+        }
+
+        @media (max-width: var.$breakpoint-mobile) {
+          font-size: 1rem; // Ensure the input font size is readable on mobile
         }
       }
 
@@ -103,9 +105,15 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
 
-      // &:hover {
-      //   background-color: darken(var.$text-color-secondary, 10%);
-      // }
+
+      @media (max-width: var.$breakpoint-tablet) {
+        padding: 0.8rem 1.5rem; // Reduce padding on tablet
+      }
+
+      @media (max-width: var.$breakpoint-mobile) {
+        padding: 0.8rem 1rem; // Reduce padding on mobile
+        font-size: 1rem; // Reduce font size for smaller screens
+      }
     }
   }
 }

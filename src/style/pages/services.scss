@@ -1,11 +1,10 @@
-/* Add to your CSS file */
 @use "../variables/variables" as var;
 @use "../mixins/mixins" as mixins;
 
 .services {
   color: var.$text-color-primary;
   text-align: center;
-  padding-top: 10vh;
+  padding-top: 15vh;
 
   @media (max-width: var.$breakpoint-tablet) {
     padding-top: 7vh;
@@ -17,29 +16,27 @@
 }
 
 .section-title {
+  @include mixins.semiTransparentBackground(var.$secondary-bg-color);
   border-radius: 50px 0px 0px 50px;
   font-size: var.$font-size-xl;
   margin-bottom: 2rem;
   color: var.$text-color-primary;
-  background-color: rgba(var.$secondary-bg-color, 0.8);
-  backdrop-filter: blur(10px); // Backdrop filter
-  -webkit-backdrop-filter: blur(10px); // Safari support
   width: 35%;
   margin-left: auto;
   padding: 20px 20px;
   box-shadow: 20px 2px 50px -21px rgba(0, 0, 0, 0.75);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
   @media (max-width: var.$breakpoint-tablet) {
     font-size: 6vw;
-    // width: 50%;
-    align-items: flex-start;
-    // padding: 10px;
-    font-size: 26px;
+    width: 50%; // Adjust width for tablets
+    padding: 15px;
   }
+
   @media (max-width: var.$breakpoint-mobile) {
     font-size: 6vw;
-    width: 60%;
-    align-items: flex-start;
+    width: 60%; // Adjust width for mobile
+    padding: 10px;
   }
 }
 
@@ -51,18 +48,30 @@
   max-height: 80%;
   overflow: scroll;
   overflow-x: hidden;
+
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (max-width: var.$breakpoint-tablet) {
+    // @include mixins.flex-center;
+    // flex-direction: column;
+    // flex-wrap: wrap;
+    padding: 1rem; // Adjust padding for tablets
+    gap: 1.2rem; // Reduce the gap between cards
+  }
+  
+  @media (max-width: var.$breakpoint-mobile) {
+    @include mixins.flex-center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem; // Adjust padding for mobile
+    gap: 1rem; // Reduce the gap between cards for mobile
   }
 }
 
 .service-card {
-  background-color: rgba(
-    var.$secondary-bg-color,
-    0.8
-  ); // Semi-transparent background
-  backdrop-filter: blur(10px); // Backdrop filter
-  -webkit-backdrop-filter: blur(10px); // Safari support
+  @include mixins.semiTransparentBackground(var.$secondary-bg-color);
   border-radius: 10px;
   padding: 2.5rem 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -71,6 +80,15 @@
   transform: translateY(0);
   position: relative;
   overflow: hidden;
+
+  @media (max-width: var.$breakpoint-tablet) {
+    padding: 2rem 1.2rem; // Adjust padding for tablet devices
+  }
+
+  @media (max-width: var.$breakpoint-mobile) {
+    width: 100%;
+    padding: 1.5rem 1rem; // Adjust padding for mobile devices
+  }
 }
 
 .service-card:hover {
@@ -88,12 +106,30 @@
   justify-content: center;
   margin: 0 auto 1.5rem;
   transition: transform 0.3s;
+
+  @media (max-width: var.$breakpoint-tablet) {
+    width: 50px; // Reduce icon size for tablets
+    height: 50px;
+  }
+
+  @media (max-width: var.$breakpoint-mobile) {
+    width: 45px; // Further reduce icon size for mobile
+    height: 45px;
+  }
 }
 
 .service-icon {
   font-size: 2.2rem;
   color: white;
   transition: transform 0.3s;
+
+  @media (max-width: var.$breakpoint-tablet) {
+    font-size: 2rem; // Reduce icon font size for tablet
+  }
+
+  @media (max-width: var.$breakpoint-mobile) {
+    font-size: 1.8rem; // Further reduce icon font size for mobile
+  }
 }
 
 .service-card:hover .icon-container {
@@ -105,12 +141,27 @@
   font-size: 1.6rem;
   margin: 1rem 0;
   transition: color 0.3s;
+
+  @media (max-width: var.$breakpoint-tablet) {
+    font-size: 1.4rem; // Reduce heading size for tablet
+  }
+
+  @media (max-width: var.$breakpoint-mobile) {
+    font-size: 1.2rem; // Further reduce heading size for mobile
+  }
 }
 
 .service-card p {
-  color: #7f8c8d;
   line-height: 1.6;
   font-size: 0.95rem;
+
+  @media (max-width: var.$breakpoint-tablet) {
+    font-size: 0.9rem; // Slightly reduce text size on tablets
+  }
+
+  @media (max-width: var.$breakpoint-mobile) {
+    font-size: 0.85rem; // Further reduce text size on mobile
+  }
 }
 
 /* Gradient overlay effect */

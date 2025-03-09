@@ -3,13 +3,8 @@
 
 .navBar {
   @include mixins.flex-sb;
+  @include mixins.semiTransparentBackground(var.$secondary-bg-color,0.8);
   gap: 10px;
-  background-color: rgba(
-    var.$secondary-bg-color,
-    0.8
-  ); // Semi-transparent background
-  backdrop-filter: blur(10px); // Backdrop filter
-  -webkit-backdrop-filter: blur(10px); // Safari support
   color: var.$text-color-primary;
   padding: 0.8em;
   position: fixed;
@@ -17,6 +12,7 @@
   left: 0;
   width: 100%;
   z-index: 10000000;
+  height: 60px;
   .logo {
     font-size: 1.5em;
   }
@@ -90,14 +86,7 @@
       left: 0;
       padding: 1em;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      background-color: rgba(
-        var.$secondary-bg-color,
-        0.8
-      ); // Use rgba for opacity
-      backdrop-filter: blur(
-        10px
-      ); // Add backdrop filter for frosted glass effect
-      -webkit-backdrop-filter: blur(10px); // For Safari support
+      @include mixins.semiTransparentBackground(var.$secondary-bg-color);
     }
 
     .nav-options.open {

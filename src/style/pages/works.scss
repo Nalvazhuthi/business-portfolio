@@ -7,29 +7,25 @@
   color: var.$text-color-primary;
   text-align: center;
   padding-top: 15vh;
-  @media (max-width: var.$breakpoint-tablet) {
-    padding-top: 10vh;
-  }
+  // @media (max-width: var.$breakpoint-tablet) {
+  //   padding-top: 10vh;
+  // }
 
-  @media (max-width: var.$breakpoint-mobile) {
-    padding-top: 5vh;
-  }
+  // @media (max-width: var.$breakpoint-mobile) {
+  //   padding-top: 5vh;
+  // }
 
   h1 {
-    border-radius: 50px 0px 0px 50px;
+    @include mixins.semiTransparentBackground(var.$secondary-bg-color);
+    border-radius: 0 50px 50px 0;
     font-size: var.$font-size-xl;
     margin-bottom: 2rem;
     color: var.$text-color-primary;
-    background-color: rgba(
-      var.$secondary-bg-color,
-      0.8
-    ); // Semi-transparent background
-    backdrop-filter: blur(10px); // Backdrop filter
-    -webkit-backdrop-filter: blur(10px); // Safari support
     width: 35%;
-    margin-left: auto;
+    // margin-left: auto;
     padding: 20px 20px;
     box-shadow: 20px 2px 50px -21px rgba(0, 0, 0, 0.75);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
     @media (max-width: var.$breakpoint-mobile) {
       font-size: 6vw;
@@ -58,12 +54,7 @@
     }
 
     .work-card {
-      background-color: rgba(
-        var.$secondary-bg-color,
-        0.8
-      ); // Semi-transparent background
-      backdrop-filter: blur(10px); // Backdrop filter
-      -webkit-backdrop-filter: blur(10px); // Safari support
+      @include mixins.semiTransparentBackground(var.$secondary-bg-color);
       border-radius: 10px;
       padding: 1.5rem;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -79,8 +70,8 @@
         font-size: 1.8rem;
         margin-bottom: 1rem;
         color: var.$text-color-primary;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-          1px 1px 0 #000;
+        // text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        //   1px 1px 0 #000;
       }
 
       p {

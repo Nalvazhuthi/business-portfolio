@@ -4,6 +4,7 @@
 .home {
   @include mixins.flex-center;
   align-items: flex-end;
+  flex-direction: row;
   color: var.$text-color-secondary;
   padding-bottom: 16px;
   // @media (max-width: var.$breakpoint-tablet) {
@@ -21,14 +22,18 @@
       font-size: 6vw;
       position: relative;
       // @include mixins.fadeInTopToBottom(1s, 50px);
-      
-      text-shadow: 3px 3px 6px #8e7cae; // Adjusted shadow for better visibility
+
+      text-shadow: -1px -1px 0 #E2FFFF, 1px -1px 0 #E2FFFF, -1px 1px 0 #E2FFFF,
+        1px 1px 0 #E2FFFF;
       @media (max-width: var.$breakpoint-mobile) {
         font-size: 6vw;
       }
     }
 
     h1 {
+      text-shadow: -1px -1px 0 #E2FFFF, 1px -1px 0 #E2FFFF, -1px 1px 0 #E2FFFF,
+        1px 1px 0 #E2FFFF;
+
       font-size: 10vw;
       // @include mixins.fadeInTopToBottom(1s, 50px);
 
@@ -40,13 +45,18 @@
     .businessDetails {
       width: 70vw;
       text-align: center;
+      font-size: var.$font-size-base;
+      text-shadow: -1px -1px 0 #8e7cae, 1px -1px 0 #8e7cae, -1px 1px 0 #8e7cae,
+        1px 1px 0 #8e7cae;
+
+      color: var.$text-color-primary; // white text color to contrast with the background
     }
 
     .socialLinks {
       // @include mixins.fadeInLeftToRight(
       //   1s,
       //   50px
-      // ); 
+      // );
       @include mixins.flex-sb;
       gap: 16px;
     }

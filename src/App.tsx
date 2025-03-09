@@ -43,12 +43,12 @@ const App = () => {
       })
       .to(sceneRef.current, {
         ease: "none",
-        x: "0vw",
+        x: "-5vw",
         y: "0vh",
       })
       .to(sceneRef.current, {
         ease: "none",
-        x: "25vw",
+        x: "-25vw",
         y: "0vh",
       });
   }, []);

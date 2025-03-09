@@ -9,41 +9,35 @@
     flex-direction: column;
     gap: 40px;
 
-    @media (max-width: var.$breakpoint-tablet) {
-      padding-top: 10vh;
-    }
+    // @media (max-width: var.$breakpoint-tablet) {
+    //   padding-top: 10vh;
+    // }
 
-    @media (max-width: var.$breakpoint-mobile) {
-      padding-top: 5vh;
-    }
+    // @media (max-width: var.$breakpoint-mobile) {
+    //   padding-top: 5vh;
+    // }
 
     .top-header {
+      @include mixins.semiTransparentBackground(var.$secondary-bg-color);
+      @include mixins.flex-center;
       border-radius: 0 50px 50px 0;
       width: 35%;
-      background-color: rgba(
-        var.$secondary-bg-color,
-        0.8
-      ); // Semi-transparent background
-      backdrop-filter: blur(10px); // Backdrop filter
-      -webkit-backdrop-filter: blur(10px); // Safari support
       padding: 20px 20px;
       padding-right: 30px;
-      // box-shadow: 20px 2px 50px -21px rgba(0, 0, 0, 0.75);
-      @include mixins.flex-center;
-      @media (max-width: var.$breakpoint-tablet) {
-        font-size: 6vw;
-        // width: 50%;
-        align-items: flex-start;
-        // padding: 10px;
-        font-size: 26px;
-      }
-      @media (max-width: var.$breakpoint-mobile) {
-        font-size: 6vw;
-        width: 60%;
-        align-items: flex-start;
-      }
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
       h1 {
         font-size: var.$font-size-xl;
+        @media (max-width: var.$breakpoint-tablet) {
+          font-size: 6vw;
+          // width: 50%;
+          align-items: flex-start;
+          font-size: 26px;
+        }
+        @media (max-width: var.$breakpoint-mobile) {
+          font-size: 6vw;
+          width: 60%;
+          align-items: flex-start;
+        }
       }
 
       @media (max-width: var.$breakpoint-tablet) {
@@ -86,6 +80,16 @@
     .col {
       @include mixins.flex-arround;
       align-items: start;
+      gap: 6px;
+      .about-info {
+        @include mixins.flex-arround;
+        flex-direction: column;
+        align-items: start;
+        gap: 6px;
+        h3 {
+          font-size: 28px;
+        }
+      }
       .skills-box {
         display: flex;
         flex-direction: column;
